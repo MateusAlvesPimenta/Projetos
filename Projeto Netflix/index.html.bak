@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+
+<head>
+
+<title>Netflix</title>
+<meta charset="utf8">
+<link rel="stylesheet" href="css/main.css">
+<link rel="icon" type="image/x-icon" href="C:\Users\Filipe\Desktop\Mateus\Programação\Exercícios e desafios feitos no curso da DIO\Projeto Netflix\imagens\icon.png">
+
+</head>
+
+<body>
+	<header>
+	
+		<div class="container">
+			<h1>NETFLIX</h1>
+			<div>
+				<a href="#">Inicio</a>
+				<a href="#">Séries</a>
+				<a href="#">Filmes</a>
+				<a href="#">Desenhos</a>
+			</div>
+		</div>
+	</header>
+
+	<main class="filme-principal">
+		<h1>The Witcher</h1>
+		<div class="descrição">
+			<p>O mutante Geralt de Rívia é um caçador de monstros que luta para encontrar seu lugar em um mundo onde as pessoas, muitas vezes, são mais perversas do que as criaturas selvagens.</p>
+		</div>
+		
+	</main>
+
+</body>
+
+</html>

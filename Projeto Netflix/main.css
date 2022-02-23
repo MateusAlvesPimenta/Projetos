@@ -1,0 +1,81 @@
+:root{
+--vermelho:rgba(222, 23, 0);
+--preto:#141414;
+}
+*{
+	margin: 0px;
+	padding: 0px;
+	box-sizing:border-box;
+}
+Body{
+	background: black;
+	font-family: arial;
+	color: white;
+}
+header .container{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin: 1%;
+
+}
+.container h1{
+	font-weight: bold;
+	color: var(--vermelho);
+	font-size: 350%;
+}
+header a{
+	text-decoration:none;
+	color: #aaa;
+	cursor: pointer;
+	transition: .3s;
+	margin-right: 10px;
+	font-size: 150%;
+}
+header a:hover {
+	color: #fff;
+}
+ .principal{
+	font-size: 200%;
+	background-image:linear-gradient(rgb(0, 0, 0,.3),rgba(0,0,0,.3)100%), url("./img/impr.jpg");
+	height: 18cm;
+	background-size: cover;
+	padding-left: 2%;
+	padding-top: 20%;
+
+}
+.descrição{
+	padding-top: 1%;
+	font-size: 75%;
+	max-width: 40%;
+}
+.button {
+	margin-top: 5%;
+	margin-right: 2%;
+	border: none;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.50);
+	padding: 15px 30px;
+	cursor: pointer;
+	transition: .3s ease all;
+	font-size: medium;
+	min-width: 7cm;
+}
+.button:hover{
+	color: black;
+	background: white;
+}
+.filme{
+	height: 100%;
+	width: 100%;
+	display: block;
+}
+section h1{
+	font-size: .8cm;
+	text-align: center;
+	margin: 10px;
+}
+@media screen and (max-width: 600px){
+	
+}
