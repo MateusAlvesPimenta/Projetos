@@ -40,7 +40,6 @@ header a:hover {
 	font-size: 200%;
 	background-image:linear-gradient(rgb(0, 0, 0,.3),rgba(0,0,0,.3)100%), url("./img/impr.jpg");
 	height: 18cm;
-	background-size: cover;
 	padding-left: 2%;
 	padding-top: 20%;
 
@@ -75,4 +74,7 @@ section h1{
 	font-size: .8cm;
 	text-align: center;
 	margin: 10px;
+}
+@media screen and (max-width: 600px){
+	
 }
