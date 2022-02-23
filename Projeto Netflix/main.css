@@ -61,6 +61,7 @@ header a:hover {
 	transition: .3s ease all;
 	font-size: medium;
 	min-width: 7cm;
+	text-decoration: none;
 }
 .button:hover{
 	color: black;
