@@ -1,5 +1,4 @@
 function start() { // Inicio da função start()
-
     $("#inicio").hide();
 	
 	$("#fundoGame").append("<div id='jogador' class='anima1'></div>");
@@ -373,14 +372,22 @@ function start() { // Inicio da função start()
         $("#fundoGame").append("<div id='fim'></div>");
 
         $("#fim").html("<h1> Game Over </h1><h3>Melhor Pontacão: "+pontuaçãoMaxima()+"</h3><p>Sua pontuação foi: " + pontos+"<p>Você Salvou: "+salvos+" amigos</p><p>E perdeu: "+perdidos+" amigos</p>");
-        $("#fim").append("<h1>Insira seu nome</h1><input> <br>")
+        $("#fim").append("<h1>Insira seu nome</h1><input id='nome'> <br>")
         $("#fim").append("<a id='salve'>Salvar</a> <br><br> <a onclick=voltar()>Voltar</a>");
         document.getElementById('salve').addEventListener('click', salvandoPontuação);
     } // Fim da função gameOver();
     function salvandoPontuação(){
-        localStorage.setItem('posição'+localStorage.count,pontos);
-        salvandoNome()
+    	sessionStorage.setItem('count',localStorage.length/2);
+        localStorage.setItem('posição'+sessionStorage.count,pontos);
+	//Salvar o Nome
+			var nome = document.getElementById('nome')
+    	if(!nome){}
+    else{
+    localStorage.setItem('posição'+sessionStorage.count+"1",nome.value);
+    sessionStorage.setItem('count',Number(sessionStorage.count)+1);
     }
+    $("#fim").remove();
+    $("#inicio").show();    }
 } // Fim da função start
 
 //Reinicia o Jogo
@@ -406,20 +413,15 @@ function mostrarRank(){
     $('#fundoGame').append("<div id='rank'></div>");
     $("#rank").append("<h1>Top 10</h1><a onclick=voltar()>Voltar</a>");
     
-    if(localStorage.length>=9){
-        var count=9;
-    }else var count=localStorage.length-1;
-
     var pontuações=[];
-    for(let i=0;i<=count;i++){
+    for(let i=0;i<=10;i++){
 
         var posições =localStorage.getItem("posição"+i);
         pontuações.push(posições);
     }
-    for(let i=0; i<count;i++){
+    for(let i=0; i<10;i++){
         var nome=localStorage.getItem('posição'+i+"1");
         var maior=Math.max(...pontuações);
-        nome.st
         if(!nome){
             $("#rank").append("<p>"+(i+1)+"° Posição com: "+maior+" pontos<br></p>");
         }
@@ -432,21 +434,9 @@ function mostrarRank(){
 
 function pontuaçãoMaxima(){
     var pontuações=[];
-    for(let i=0;i<localStorage.length-1;i++){
+    for(let i=0;i<=localStorage.length;i++){
          var posições =localStorage.getItem("posição"+i);
           pontuações.push(posições);
     }
     return Math.max(...pontuações);
-}
-
-function salvandoNome(){
-    var nome = document.getElementById('nome')
-    if(!nome){}
-
-    else{
-    localStorage.setItem('posição'+localStorage.count+"1",nome.value);
-    localStorage.setItem('count',Number(localStorage.count)+1);
-    }
-    $("#fim").remove();
-    $("#inicio").show();
 }
